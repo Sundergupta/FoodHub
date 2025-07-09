@@ -1,0 +1,102 @@
+/* Container */
+.signin-container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Image Section */
+.signin-image-section {
+  flex: 1;
+}
+
+.signin-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Form Section */
+.signin-form-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 60px;
+  background-color: #ffffff;
+}
+
+/* Title */
+.signin-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #0f2d21;
+}
+
+/* Form */
+.signin-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Input Fields */
+.signin-input {
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  border-radius: 6px;
+  border: 1px solid #e6e6e6;
+  font-size: 14px;
+  background-color: #fffaf6;
+}
+
+/* Password Wrapper */
+.password-wrapper {
+  position: relative;
+}
+
+.show-password {
+  position: absolute;
+  right: 16px;
+  top: 14px;
+  font-size: 13px;
+  color: #555;
+  cursor: pointer;
+}
+
+/* Login Button */
+.signin-button {
+  background-color: #002d21;
+  color: white;
+  padding: 14px 0;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Footer Links */
+.signin-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+.signin-footer a {
+  color: #333;
+  text-decoration: none;
+}
+.error-message {
+    color: red;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.success-message {
+    color: green;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}

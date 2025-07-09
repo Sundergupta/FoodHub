@@ -1,0 +1,164 @@
+/* FoodLandingPage.css */
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #042F2E;
+  color: white;
+}
+
+.landing-page {
+  width: 100%;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links a {
+  margin-right: 1.5rem;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links .signup-btn {
+  background-color: #FCD34D;
+  color: black;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 3rem 2rem;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.hero-content h1 span {
+  color: #FCD34D;
+}
+
+.hero-content p {
+  color: #cccccc;
+  margin: 1rem 0;
+}
+
+.app-buttons img {
+  width: 120px;
+  margin-right: 1rem;
+}
+
+.hero-image img {
+  max-width: 300px;
+  border-radius: 9999px;
+  margin-top: 2rem;
+}
+
+/* Specials Section */
+.specials-section {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.specials-section p {
+  color: #cccccc;
+  margin-bottom: 2rem;
+}
+
+.specials {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.meal img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.meal h3 {
+  margin: 0.5rem 0;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  background-color: #021E1E;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.newsletter-section h2 {
+  color: #FCD34D;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.newsletter-form input {
+  padding: 0.5rem;
+  width: 250px;
+  border-radius: 6px;
+  border: none;
+}
+
+.newsletter-form button {
+  background-color: #FCD34D;
+  color: black;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
+
+/* Footer */
+.footer {
+  background-color: #011918;
+  padding: 3rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+}
+
+.footer h4 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  color: #cccccc;
+}
+
+.footer ul li {
+  margin-bottom: 0.5rem;
+}
