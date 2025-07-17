@@ -89,3 +89,8 @@
   color: #333;
   text-decoration: none;
 }
+.error-message {
+    color: red;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}

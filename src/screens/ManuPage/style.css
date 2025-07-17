@@ -1,0 +1,99 @@
+.menu-container {
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+}
+
+.main-section {
+    flex-grow: 1;
+    padding: 40px 60px;
+    background-color: #ffffff;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.header h2 {
+    color: #003300;
+    margin: 0;
+}
+
+.header p {
+    color: #888;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.profile-pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+.menu-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 25px 15px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-3px);
+}
+
+.food-img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.menu-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #003300;
+    margin-bottom: 5px;
+}
+
+.description {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.menu-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.add-btn {
+    color: #00af63;
+    background: none;
+    border: none;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+}

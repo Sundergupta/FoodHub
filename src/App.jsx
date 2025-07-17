@@ -7,6 +7,7 @@ import RootLayout from './component/RootLayout';
 // import NavBar from './component/navBar';
 import SignInPage from './screens/signIn';
 import SignUpPage from './screens/signUp';
+import ManuPage from './screens/Manupage';
 const router = createBrowserRouter([
 
   // {
@@ -20,8 +21,11 @@ const router = createBrowserRouter([
   {
     path: 'signUp',
     element: <SignUpPage />,
+  },
+  {
+    path: 'ManuPage',
+    element: <ManuPage />,
   }
-
 ])
 
 function App() {
