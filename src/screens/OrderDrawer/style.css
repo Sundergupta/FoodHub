@@ -1,0 +1,44 @@
+.order-drawer-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: flex-end;
+    z-index: 1200;
+}
+
+.order-drawer {
+    width: 400px;
+    max-width: 90%;
+    background: #fff;
+    padding: 2rem;
+    height: 100%;
+    overflow-y: auto;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.3s ease-in-out;
+    color: #003f3f; /* Apply to all text inside */
+}
+
+.order-list {
+    list-style: none;
+    padding: 0;
+    color: #003f3f;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    color: #003f3f;
+}
+
+.order-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+}

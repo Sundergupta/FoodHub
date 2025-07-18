@@ -1,0 +1,80 @@
+.cart-drawer-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: flex-end;
+    z-index: 1000;
+}
+
+.cart-drawer {
+    width: 400px;
+    max-width: 90%;
+    background: white;
+    padding: 2rem;
+    height: 100%;
+    overflow-y: auto;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+    color: #003f3f; /* 👈 Set text color globally for drawer */
+}
+
+.cart-drawer h2 {
+    margin-bottom: 1.5rem;
+    color: #003f3f; /* Header color */
+}
+
+.cart-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    color: #003f3f; /* Table text color */
+}
+
+td, th {
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+    color: #003f3f; /* Table cell color */
+}
+
+td img {
+    vertical-align: middle;
+}
+
+.cart-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #003f3f; /* Total text color */
+}
+
+.checkout-btn {
+    background-color: #003f3f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.remove-btn {
+    background-color: crimson;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.remove-btn:hover {
+    background-color: darkred;
+}
