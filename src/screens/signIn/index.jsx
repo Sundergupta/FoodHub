@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase"; // make sure this path is correct
+import { auth } from "../../firebase";
 import "./style.css";
 import kitchenImage from "../../assets/signIn/kitchen.svg";
+import { useNavigate } from "react-router-dom"; // ✅ import navigation
 
 const SignInPage = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState("");
+    const navigate = useNavigate(); // ✅ init navigate
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -16,7 +18,7 @@ const SignInPage = () => {
             await signInWithEmailAndPassword(auth, email, password);
             setError("");
             alert("Login successful!");
-            // Optionally redirect to dashboard here
+            navigate("/menu"); // ✅ redirect to MenuPage
         } catch (err) {
             setError(err.message);
         }

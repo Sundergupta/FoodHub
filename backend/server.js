@@ -20,7 +20,7 @@ app.post('/send-order-email', async (req, res) => {
             service: 'gmail',
             auth: {
                 user: 'drivesunder606@gmail.com',
-                pass: 'your-app-password'  // not your Gmail password, use App Password
+                pass: 'rsrrsvgo'  // not your Gmail password, use App Password
             }
         });
 

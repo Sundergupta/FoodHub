@@ -1,41 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import RootLayout from './component/RootLayout';
-// import NavBar from './component/navBar';
-import SignInPage from './screens/signIn';
-import SignUpPage from './screens/signUp';
-import ManuPage from './screens/Manupage';
+import SignInPage from "./screens/signIn";
+import SignUpPage from "./screens/signUp";
+import ManuPage from "./screens/Manupage";
+import AdminPanel from "./screens/AdminPanel";
+
+// Define all your routes
 const router = createBrowserRouter([
-
-  // {
-  //   path: '/',
-  //   element: <NavBar />,
-  // },
   {
-    path: 'signIn',
+    path: "/",
     element: <SignInPage />,
   },
   {
-    path: 'signUp',
+    path: "/signIn",
+    element: <SignInPage />,
+  },
+  {
+    path: "/signUp",
     element: <SignUpPage />,
   },
   {
-    path: 'ManuPage',
+    path: "/menu",
     element: <ManuPage />,
-  }
-])
+  },
+  {
+    path: "/adminPanel",
+    element: <AdminPanel />,
+  },
+]);
 
 function App() {
-  // const user = useSelector((state) => state.user)
-  // console.log("Inside App ", user)
-  return (
-    <>
-      <RouterProvider router={router} />
-    </>
-  )
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;

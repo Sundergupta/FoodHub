@@ -1,6 +1,9 @@
+// src/screens/signUp/index.jsx
 import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase"; // Adjust path if needed
+import { doc, setDoc } from "firebase/firestore";
+import { auth, db } from "../../firebase";
+import { useNavigate } from "react-router-dom";
 import "./style.css";
 import kitchenImage from "../../assets/signIn/kitchen.svg";
 
@@ -10,13 +13,24 @@ const SignUpPage = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
+    const navigate = useNavigate();
 
     const handleSignUp = async (e) => {
         e.preventDefault();
         try {
-            await createUserWithEmailAndPassword(auth, email, password);
+            const userCred = await createUserWithEmailAndPassword(auth, email, password);
+
+            // ✅ Save email in Firestore
+            await setDoc(doc(db, "users", userCred.user.uid), {
+                email: email,
+                createdAt: new Date()
+            });
+
             setSuccess("Account created successfully!");
             setError("");
+            setTimeout(() => {
+                navigate("/"); // Redirect to menu page
+            }, 1500);
         } catch (err) {
             setError(err.message);
             setSuccess("");
@@ -62,7 +76,7 @@ const SignUpPage = () => {
                     </button>
                 </form>
                 <div className="signin-footer">
-                    <a href="#">Already have an account? Login</a>
+                    <a href="/signIn">Already have an account? Login</a>
                 </div>
             </div>
         </div>
