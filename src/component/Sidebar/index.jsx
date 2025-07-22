@@ -1,14 +1,17 @@
 // src/components/Sidebar.jsx
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./style.css";
 
 const Sidebar = ({ ordersCount, cartCount, onCartClick, onOrdersClick }) => {
+    const navigate = useNavigate(); // 👈 for programmatic navigation
+
     return (
         <aside className="sidebar">
-            <div className="logo">🍽️ Lilies</div>
+            <div className="logo">🍽️ FoodHub</div>
             <ul className="nav-links">
-                <li className="active">🏠 Dashboard</li>
-                <li>👤 Your Profile</li>
+                <li className="active" onClick={() => navigate("/")}>🏠 Dashboard</li>
+                <li onClick={() => navigate("/profile")}>👤 Your Profile</li> {/* 👈 profile navigation */}
                 <li onClick={onOrdersClick} className="orders-link">
                     🧾 Orders{" "}
                     {ordersCount > 0 && (

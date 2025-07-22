@@ -5,8 +5,8 @@ import SignInPage from "./screens/signIn";
 import SignUpPage from "./screens/signUp";
 import ManuPage from "./screens/Manupage";
 import AdminPanel from "./screens/AdminPanel";
+import ProfilePage from "./screens/ProfilePage"; // ✅ import profile
 
-// Define all your routes
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: "/adminPanel",
     element: <AdminPanel />,
+  },
+  {
+    path: "/profile", // ✅ new route
+    element: <ProfilePage />,
   },
 ]);
 

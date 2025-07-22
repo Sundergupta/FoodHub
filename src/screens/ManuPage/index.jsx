@@ -18,13 +18,24 @@ import PaymentDrawer from "../PaymentDrawer";
 import OrderDrawer from "../OrderDrawer";
 import emailjs from "@emailjs/browser";
 
-import food1 from "../../assets/signIn/kitchen.svg";
-import food2 from "../../assets/signIn/kitchen.svg";
-import food3 from "../../assets/signIn/kitchen.svg";
-import food4 from "../../assets/signIn/kitchen.svg";
-import food5 from "../../assets/signIn/kitchen.svg";
-import food6 from "../../assets/signIn/kitchen.svg";
-import profileImage from "../../assets/signIn/kitchen.svg";
+import food1 from "../../assets/maggi.webp";
+import food2 from "../../assets/cheesy-maggie.png";
+import food3 from "../../assets/masala-maggi.png";
+import food4 from "../../assets/weight-sauce-pasta.webp";
+import food5 from "../../assets/red-sauce-pasta.webp";
+import food6 from "../../assets/cheese-paneer-grill-sandwich.png";
+import food7 from "../../assets/cheese-veg-grill-sandwich.png";
+import food8 from "../../assets/afghani-momos.webp";
+import food9 from "../../assets/tandoori-momos.jpg";
+import food10 from "../../assets/momos.jpg";
+import food11 from "../../assets/wai-wai-chaat.jpg";
+import food12 from "../../assets/wai-wai-noodles.jpg";
+
+
+
+import profileImage from "../../assets/profile-image.jpg";
+
+
 
 // ✅ Email sending function
 const sendOrderEmail = async (orderItems, userEmail) => {
@@ -95,12 +106,18 @@ const MenuPage = () => {
     const [orderItems, setOrderItems] = useState([]);
 
     const menuItems = [
-        { image: food1, title: "Stir Fry Pasta", description: "Delicious stir-fried pasta.", price: "₦1,000.00" },
-        { image: food2, title: "Grilled Chicken", description: "Juicy grilled chicken.", price: "₦1,500.00" },
-        { image: food3, title: "Veggie Delight Pizza", description: "Fresh veggies and cheese.", price: "₦2,200.00" },
-        { image: food4, title: "Beef Burger", description: "Grilled beef patty.", price: "₦1,800.00" },
-        { image: food5, title: "Chicken Biryani", description: "Spicy rice with chicken.", price: "₦1,600.00" },
-        { image: food6, title: "Chocolate Cake", description: "Rich chocolate dessert.", price: "₦1,200.00" },
+        { image: food1, title: "Classic Maggi", description: "Hot and tasty Maggi noodles.", price: "₹50.00" },
+        { image: food2, title: "Cheesy Maggi", description: "Maggi loaded with cheese.", price: "₹70.00" },
+        { image: food3, title: "Masala Maggi", description: "Spicy and flavorful masala maggi.", price: "₹60.00" },
+        { image: food4, title: "White Sauce Pasta", description: "Creamy pasta in white sauce.", price: "₹120.00" },
+        { image: food5, title: "Red Sauce Pasta", description: "Tangy red sauce pasta delight.", price: "₹120.00" },
+        { image: food6, title: "Cheese Paneer Grill Sandwich", description: "Grilled sandwich with cheese and paneer.", price: "₹90.00" },
+        { image: food7, title: "Cheese vegetables Grill Sandwich", description: "Grilled veggie sandwich with cheese.", price: "₹80.00" },
+        { image: food8, title: "Afghani Momos", description: "Creamy and spicy Afghani momos.", price: "₹110.00" },
+        { image: food9, title: "Tandoori Momos", description: "Smoky tandoori-style momos.", price: "₹120.00" },
+        { image: food10, title: "Steamed Momos", description: "Classic steamed momos.", price: "₹100.00" },
+        { image: food11, title: "Wai Wai Chaat", description: "Crunchy spicy wai wai chaat.", price: "₹70.00" },
+        { image: food12, title: "Wai Wai Noodles", description: "Tasty and spicy wai wai noodles.", price: "₹60.00" }
     ];
 
     useEffect(() => {
