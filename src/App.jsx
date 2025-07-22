@@ -1,16 +1,24 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 
 import SignInPage from "./screens/signIn";
 import SignUpPage from "./screens/signUp";
 import ManuPage from "./screens/Manupage";
 import AdminPanel from "./screens/AdminPanel";
-import ProfilePage from "./screens/ProfilePage"; // ✅ import profile
+import ProfilePage from "./screens/ProfilePage";
 
+// 🔒 Protected Route component
+const ProtectedRoute = ({ element }) => {
+  const isLoggedIn = localStorage.getItem("user"); // Or use Firebase auth if you prefer
+
+  return isLoggedIn ? element : <Navigate to="/signIn" replace />;
+};
+
+// 🔧 Router setup
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <SignInPage />,
+    element: <Navigate to="/signIn" replace />, // Redirect root to SignIn
   },
   {
     path: "/signIn",
@@ -22,15 +30,15 @@ const router = createBrowserRouter([
   },
   {
     path: "/menu",
-    element: <ManuPage />,
+    element: <ProtectedRoute element={<ManuPage />} />,
   },
   {
     path: "/adminPanel",
-    element: <AdminPanel />,
+    element: <ProtectedRoute element={<AdminPanel />} />,
   },
   {
-    path: "/profile", // ✅ new route
-    element: <ProfilePage />,
+    path: "/profile",
+    element: <ProtectedRoute element={<ProfilePage />} />,
   },
 ]);
 

@@ -10,17 +10,18 @@ const SignInPage = () => {
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState("");
-    const navigate = useNavigate(); // ✅ init navigate
+    const navigate = useNavigate(); // ✅ initialize
 
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
             await signInWithEmailAndPassword(auth, email, password);
             setError("");
+            localStorage.setItem("user", JSON.stringify(email)); // ✅ save login
             alert("Login successful!");
-            navigate("/menu"); // ✅ redirect to MenuPage
+            navigate("/menu"); // ✅ redirect after login
         } catch (err) {
-            setError(err.message);
+            setError("Invalid email or password.");
         }
     };
 
@@ -61,9 +62,21 @@ const SignInPage = () => {
                         LOGIN
                     </button>
                 </form>
+
                 <div className="signin-footer">
-                    <a href="#">Create an account</a>
-                    <a href="#">Forgot Password</a>
+                    <span
+                        className="signin-link"
+                        onClick={() => navigate("/signUp")}
+                        style={{ cursor: "pointer", color: "#007bff" }}
+                    >
+                        Create an account
+                    </span>
+                    <span
+                        className="signin-link"
+                        style={{ cursor: "not-allowed", opacity: 0.6 }}
+                    >
+                        Forgot Password
+                    </span>
                 </div>
             </div>
         </div>
