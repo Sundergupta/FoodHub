@@ -94,7 +94,7 @@ const FoodDrawer = ({ item, onAddToCart }) => {
 };
 
 // ✅ Main Component
-const MenuPage = () => {
+const Manupage = () => {
     const [user, setUser] = useState(null);
     const [ordersCount, setOrdersCount] = useState(0);
     const [cartCount, setCartCount] = useState(0);
@@ -308,4 +308,4 @@ const MenuPage = () => {
     );
 };
 
-export default MenuPage;
+export default Manupage;
