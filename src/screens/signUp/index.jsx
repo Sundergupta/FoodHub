@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { auth, db } from "../../firebase";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./style.css";
 import kitchenImage from "../../assets/signIn/kitchen.svg";
 
@@ -75,16 +75,13 @@ const SignUpPage = () => {
                     </button>
                 </form>
 
-                {/* ✅ Updated Login link */}
+                {/* ✅ React Router Link */}
                 <div className="signin-footer">
                     <p>
                         Already have an account?{" "}
-                        <span
-                            onClick={() => navigate("/signIn")}
-                            style={{ color: "#007bff", cursor: "pointer", textDecoration: "underline" }}
-                        >
+                        <Link to="/signIn" className="login-link">
                             Login
-                        </span>
+                        </Link>
                     </p>
                 </div>
             </div>
