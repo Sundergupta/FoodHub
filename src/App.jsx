@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom"
 
 import SignInPage from "./screens/signIn";
 import SignUpPage from "./screens/signUp";
-import ManuPage from "./screens/Manupage";
+import ManuPage from "./screens/ManuPage";
 import AdminPanel from "./screens/AdminPanel";
 import ProfilePage from "./screens/ProfilePage";
 
