@@ -1,4 +1,3 @@
-// src/screens/signUp/index.jsx
 import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
@@ -29,7 +28,7 @@ const SignUpPage = () => {
             setSuccess("Account created successfully!");
             setError("");
             setTimeout(() => {
-                navigate("/"); // Redirect to menu page
+                navigate("/"); // Redirect to menu page or home
             }, 1500);
         } catch (err) {
             setError(err.message);
@@ -75,8 +74,18 @@ const SignUpPage = () => {
                         SIGN UP
                     </button>
                 </form>
+
+                {/* ✅ Updated Login link */}
                 <div className="signin-footer">
-                    <a href="/signIn">Already have an account? Login</a>
+                    <p>
+                        Already have an account?{" "}
+                        <span
+                            onClick={() => navigate("/signIn")}
+                            style={{ color: "#007bff", cursor: "pointer", textDecoration: "underline" }}
+                        >
+                            Login
+                        </span>
+                    </p>
                 </div>
             </div>
         </div>
