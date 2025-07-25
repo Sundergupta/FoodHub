@@ -18,7 +18,7 @@ const ProtectedRoute = ({ element }) => {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to="/signIn" replace />, // Redirect root to SignIn
+    element: <Navigate to="/signUp" replace />, // Redirect root to SignIn
   },
   {
     path: "/signIn",
