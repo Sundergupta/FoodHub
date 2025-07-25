@@ -9,16 +9,15 @@ import ProfilePage from "./screens/ProfilePage";
 
 // 🔒 Protected Route component
 const ProtectedRoute = ({ element }) => {
-  const isLoggedIn = localStorage.getItem("user"); // Or use Firebase auth if you prefer
-
+  const isLoggedIn = localStorage.getItem("user"); // Replace with Firebase auth check if needed
   return isLoggedIn ? element : <Navigate to="/signIn" replace />;
 };
 
-// 🔧 Router setup
+// 🌐 App routes
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to="/signUp" replace />, // Redirect root to SignIn
+    element: <Navigate to="/signUp" replace />, // Redirect root to SignUp
   },
   {
     path: "/signIn",
