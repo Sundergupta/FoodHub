@@ -23,7 +23,6 @@ const FoodDrawer = ({ item, onClose }) => {
                 <div className="meta">
                     <span>NGN 2000.00</span>
                     <span>10–20 Mins</span>
-                    <span>10 Pcs Avail</span>
                 </div>
                 <div className="quantity-controls">
                     <button onClick={decreaseQty}>−</button>

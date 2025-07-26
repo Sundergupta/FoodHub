@@ -31,13 +31,8 @@ import food10 from "../../assets/momos.jpg";
 import food11 from "../../assets/wai-wai-chaat.jpg";
 import food12 from "../../assets/wai-wai-noodles.jpg";
 
-
-
 import profileImage from "../../assets/profile-image.jpg";
 
-
-
-// ✅ Email sending function
 const sendOrderEmail = async (orderItems, userEmail) => {
     const orderDetails = orderItems
         .map(item => `${item.title} (x${item.quantity}) - ${item.price}`)
@@ -45,14 +40,14 @@ const sendOrderEmail = async (orderItems, userEmail) => {
 
     try {
         await emailjs.send(
-            "service_i0satp1",         // Your service ID
-            "template_jzz407w",        // Your template ID
+            "service_i0satp1",
+            "template_jzz407w",
             {
-                to_email: "drivesunder606@gmail.com", // Receiver
-                user_email: userEmail,                // Sender
-                message: orderDetails                 // Order content
+                to_email: "drivesunder606@gmail.com",
+                user_email: userEmail,
+                message: orderDetails
             },
-            "ze_bbmF7-LTYyeXn5"         // ✅ Public key
+            "ze_bbmF7-LTYyeXn5"
         );
         console.log("✅ Order email sent!");
     } catch (err) {
@@ -60,10 +55,11 @@ const sendOrderEmail = async (orderItems, userEmail) => {
     }
 };
 
-// ✅ FoodDrawer Component
 const FoodDrawer = ({ item, onAddToCart }) => {
-    const [quantity, setQuantity] = useState(0);
-    const increaseQuantity = () => setQuantity(quantity + 1);
+    const [quantity, setQuantity] = useState(1);
+    const increaseQuantity = () => {
+        if (quantity < 10) setQuantity(quantity + 1);
+    };
     const decreaseQuantity = () => setQuantity(quantity > 1 ? quantity - 1 : 1);
 
     return (
@@ -78,7 +74,7 @@ const FoodDrawer = ({ item, onAddToCart }) => {
                 <div className="meta">
                     <span><strong>{item.price}</strong></span>
                     <span>10-20 Mins</span>
-                    <span>10 Pcs Avail</span>
+                    <span> Pcs Avail</span>
                 </div>
                 <div className="quantity-controls">
                     <button onClick={decreaseQuantity}>-</button>
