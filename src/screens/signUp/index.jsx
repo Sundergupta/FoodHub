@@ -19,16 +19,20 @@ const SignUpPage = () => {
         try {
             const userCred = await createUserWithEmailAndPassword(auth, email, password);
 
-            // ✅ Save email in Firestore
+            // ✅ Save user info in Firestore
             await setDoc(doc(db, "users", userCred.user.uid), {
                 email: email,
-                createdAt: new Date()
+                createdAt: new Date(),
             });
+
+            // ✅ Store user in localStorage for protected routes
+            localStorage.setItem("user", JSON.stringify(userCred.user));
 
             setSuccess("Account created successfully!");
             setError("");
+
             setTimeout(() => {
-                navigate("/"); // Redirect to menu page or home
+                navigate("/menu"); // ✅ Navigate to menu page
             }, 1500);
         } catch (err) {
             setError(err.message);
@@ -75,7 +79,6 @@ const SignUpPage = () => {
                     </button>
                 </form>
 
-                {/* ✅ React Router Link */}
                 <div className="signin-footer">
                     <p>
                         Already have an account?{" "}

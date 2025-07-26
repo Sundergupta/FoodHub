@@ -1,5 +1,9 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
 
 import SignInPage from "./screens/signIn";
 import SignUpPage from "./screens/signUp";
@@ -7,9 +11,9 @@ import ManuPage from "./screens/ManuPage";
 import AdminPanel from "./screens/AdminPanel";
 import ProfilePage from "./screens/ProfilePage";
 
-// 🔒 Protected Route component
+// 🔒 Protected Route wrapper
 const ProtectedRoute = ({ element }) => {
-  const isLoggedIn = localStorage.getItem("user"); // Replace with Firebase auth check if needed
+  const isLoggedIn = localStorage.getItem("user"); // Simple login check
   return isLoggedIn ? element : <Navigate to="/signIn" replace />;
 };
 
@@ -17,7 +21,7 @@ const ProtectedRoute = ({ element }) => {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to="/signUp" replace />, // Redirect root to SignUp
+    element: <Navigate to="/signUp" replace />, // Default route
   },
   {
     path: "/signIn",
